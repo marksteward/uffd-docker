@@ -14,12 +14,12 @@ openssl rand -base64 33
 3. Populate the DB with e.g.:
 
 ```
-docker compose run app flask group create 'uffd_access' --description 'User access'
-docker compose run app flask group create 'uffd_admin' --description 'Admin access'
-docker compose run app flask role create 'base-role' --default --add-group 'uffd_access'
-docker compose run app flask role create 'admin-role' --add-group 'uffd_admin'
-docker compose run app flask user create 'testuser' --password '...' --mail '...' --displayname 'Test user'
-docker compose run app flask user create 'testadmin' --password '...' --mail '...' --displayname 'Test admin' --add-role 'admin-role'
+docker compose exec app flask group create 'uffd_access' --description 'User access'
+docker compose exec app flask group create 'uffd_admin' --description 'Admin access'
+docker compose exec app flask role create 'base-role' --default --add-group 'uffd_access'
+docker compose exec app flask role create 'admin-role' --add-group 'uffd_admin'
+docker compose exec app flask user create 'testuser' --password '...' --mail '...' --displayname 'Test user'
+docker compose exec app flask user create 'testadmin' --password '...' --mail '...' --displayname 'Test admin' --add-role 'admin-role'
 ```
 
 Development
