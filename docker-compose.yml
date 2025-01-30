@@ -10,8 +10,6 @@ services:
     environment:
       - FLASK_APP=/usr/share/uffd/uffd
       - CONFIG_PATH=/etc/uffd/uffd.cfg
-      - UWSGI_DEB_CONFNAMESPACE=app
-      - UWSGI_DEB_CONFNAME=uffd
     init: true
     command: /root/run-uffd.sh
 
