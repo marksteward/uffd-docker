@@ -22,4 +22,9 @@ docker compose run app flask user create 'testuser' --password '...' --mail '...
 docker compose run app flask user create 'testadmin' --password '...' --mail '...' --displayname 'Test admin' --add-role 'admin-role'
 ```
 
+Development
+-----------
+
+Check out `https://git.cccv.de/uffd/uffd` into this repo and uncomment the mounts in `docker-compose.yml`. Be aware that any database migrations will be run on startup, and if you want to go back to the baked-in version you may need to run `docker compose run app flask db downgrade ...`. For more documentation, see the [upstream repository](https://git.cccv.de/uffd/uffd).
+
 PRs welcome!
